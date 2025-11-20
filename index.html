@@ -1,313 +1,351 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GenDesk — AI Reception & Productivity for SMBs</title>
-  <meta name="description" content="GenDesk provides AI call answering, calendar integration, and admin automation tools for small and mid-sized businesses." />
+  <meta charset="utf-8" />
+  <title>GenDesk — AI Receptionist & Admin Automation for SMBs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="GenDesk answers every call, books your calendar, and automates admin for growing practices and agencies." />
+  <meta name="theme-color" content="#0b0e11" />
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <!-- Favicon -->
-<link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" sizes="any">
-<link rel="icon" href="./assets/favicon-32x32.png" type="image/png" sizes="32x32">
-<link rel="icon" href="./assets/favicon-16x16.png" type="image/png" sizes="16x16">
-<link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" sizes="180x180">
-<link rel="manifest" href="./assets/site.webmanifest">
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles.css"/>
+  <!-- Favicons / PWA -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="alternate icon" type="image/png" href="assets/favicon-96x96.png" sizes="96x96">
+  <link rel="shortcut icon" href="assets/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
 
-  <!-- GSAP + ScrollTrigger (CDN) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-  <!-- App JS -->
-  <script src="app.js" defer></script>
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="GenDesk — AI Receptionist & Admin Automation" />
+  <meta property="og:description" content="Answer every call. Book every slot. Grow on autopilot." />
+  <meta property="og:image" content="assets/gendesk-icon.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Preloads for LCP candidates -->
+  <link rel="preload" as="image"
+        href="assets/call-portrait.webp"
+        imagesrcset="assets/call-portrait.webp 1x, assets/call-portrait.webp 2x"
+        imagesizes="(min-width: 1024px) 520px, 60vw">
+  <link rel="preload" as="image" href="assets/calendar-hero.webp">
+
+  <!-- Hook up site CSS (not included yet) -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"GenDesk",
+    "url":"https://yourdomain.example",
+    "logo":"https://yourdomain.example/assets/gendesk-icon.png",
+    "sameAs": []
+  }
+  </script>
 </head>
+
 <body>
-  <!-- Decorative blurred/3D floating shapes -->
-  <div class="orb orb-a" aria-hidden="true"></div>
-  <div class="orb orb-b" aria-hidden="true"></div>
-  <div class="orb orb-c" aria-hidden="true"></div>
+  <!-- Skip link -->
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header" id="top">
-    <nav class="nav container">
-      <a class="logo" href="#top">
-        <img src="./assets/gendesk-icon.png" alt="GenDesk logo" class="logo-icon" width="56" height="56" />
-        <span class="wordmark">
-        <span class="brand">GenDesk</span>
-        <span class="suffix">Ltd.</span>
-        </span>
-      </a>
+  <!-- =================== Header =================== -->
+  <header class="site-header" role="banner">
+    <div class="container header__inner">
+     <a class="brand" href="/" aria-label="GenDesk home">
+  <img class="brand__icon" src="assets/favicon.svg" alt="" width="40" height="40" />
+  <span class="brand__word">GenDesk Ltd.</span>
+</a>
 
-      <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <nav class="nav" aria-label="Primary">
+        <button class="nav__toggle" aria-expanded="false" aria-controls="nav-list">
+          <span class="visually-hidden">Toggle navigation</span>
+        </button>
+        <ul id="nav-list" class="nav__list">
+          <li class="nav__item"><a class="nav__link" href="#home" aria-current="page">Home</a></li>
+          <li class="nav__item"><a class="nav__link" href="#services">Services</a></li>
+          <li class="nav__item"><a class="nav__link" href="#about">About</a></li>
+          <li class="nav__item"><a class="nav__link" href="#demo">Demo</a></li>
+          <li class="nav__item"><a class="nav__link" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
 
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#offer">Offer</a></li>
-        <li><a class="btn btn-outline" href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+      <div class="header__cta">
+        <a class="btn btn--primary" href="#contact">Book a Consult</a>
+      </div>
+    </div>
   </header>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero container" id="hero">
-      <div class="hero-content">
-        <h1 class="headline">AI Reception That Works While You Rest</h1>
-        <p class="subhead">
-          Never miss a lead again. GenDesk answers calls, books appointments into your calendar, and automates the admin your team hates.
-        </p>
-        <div class="cta-row">
-          <a href="#services" class="btn btn-primary">Choose Services</a>
-          <a href="#demo" class="btn btn-ghost">View Demo</a>
-        </div>
-        <div class="trust-logos" aria-label="trusted by">
-          <span>Trusted by teams at boutique clinics, legal practices, salons, and agencies.</span>
-        </div>
-      </div>
-      <!-- Placeholder: hero image / product mock -->
-      <!-- TODO: Replace this placeholder with a product hero image or short looping video of dashboard -->
-      <div class="hero-media image-placeholder" role="img" aria-label="Product preview placeholder">
-        <div class="placeholder-note">Product preview here</div>
-      </div>
-    </section>
-
-    <!-- WHAT WE OFFER -->
-    <section class="section container" id="services">
-      <header class="section-head">
-        <h2>What We Offer</h2>
-        <p>Purpose-built for busy practices and service providers who value responsiveness, time and success.</p>
-      </header>
-
-      <div class="card-grid">
-        <article class="card offer" data-animate="card">
-          <div class="icon">
-            <!-- phone icon -->
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.9.32 1.77.59 2.61a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.47-1.12a2 2 0 0 1 2.11-.45c.84.27 1.71.47 2.61.59A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="1.6"/>
-            </svg>
-          </div>
-          <h3>AI Call Answering</h3>
-          <p>Answer, qualify, and route calls 24/7 with natural, human‑level conversation. Capture missed calls and convert them into booked visits.</p>
-          <ul class="bullets">
-            <li>Smart call routing & voicemail transcription</li>
-            <li>Lead capture with CRM handoff</li>
-            <li>After‑hours coverage</li>
-          </ul>
-        </article>
-
-        <article class="card offer" data-animate="card">
-          <div class="icon">
-            <!-- calendar icon -->
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.6"/>
-              <path d="M16 2v4M8 2v4M3 10h18" stroke="currentColor" stroke-width="1.6"/>
-            </svg>
-          </div>
-          <h3>Calendar Integration</h3>
-          <p>Autobook into Google, Outlook, and practice‑management calendars with your rules and buffers. No back‑and‑forth emails.</p>
-          <ul class="bullets">
-            <li>Two‑way sync with availability</li>
-            <li>Smart rescheduling / reminders</li>
-            <li>Team round‑robin support</li>
-          </ul>
-        </article>
-
-        <article class="card offer" data-animate="card">
-          <div class="icon">
-            <!-- layers icon -->
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M12 2l9 5-9 5-9-5 9-5z" stroke="currentColor" stroke-width="1.6"/>
-              <path d="M21 12l-9 5-9-5" stroke="currentColor" stroke-width="1.6"/>
-              <path d="M21 17l-9 5-9-5" stroke="currentColor" stroke-width="1.6"/>
-            </svg>
-          </div>
-          <h3>Multi‑Industry Support</h3>
-          <p>Prebuilt playbooks for dentists, law firms, salons, clinics, and agencies. Tailor the tone, scripts, and intake to your brand.</p>
-          <ul class="bullets">
-            <li>Industry‑specific workflows</li>
-            <li>Compliance‑minded templates</li>
-            <li>Custom vocabulary & FAQs</li>
-          </ul>
-        </article>
-
-        <article class="card offer" data-animate="card">
-          <div class="icon">
-            <!-- chart icon -->
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M4 20V4M20 20H4" stroke="currentColor" stroke-width="1.6"/>
-              <rect x="6" y="12" width="3" height="6" rx="1" stroke="currentColor" stroke-width="1.6"/>
-              <rect x="11" y="9" width="3" height="9" rx="1" stroke="currentColor" stroke-width="1.6"/>
-              <rect x="16" y="6" width="3" height="12" rx="1" stroke="currentColor" stroke-width="1.6"/>
-            </svg>
-          </div>
-          <h3>Analytics Dashboard</h3>
-          <p>See conversion rates, missed‑call recovery, and booking performance in one place. Make decisions with real data.</p>
-          <ul class="bullets">
-            <li>Live call outcomes</li>
-            <li>Source attribution</li>
-            <li>Export & API access</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="about section container" id="about">
-      <div class="about-grid">
-        <div class="about-copy">
-          <h2>Built to keep your business always‑on</h2>
-          <p>
-            We created GenDesk to make modern service businesses radically more responsive. Our mission is
-            simple: automate the routine, personalize the important, and free your team to focus on work that matters.
+  <main id="main" tabindex="-1">
+    <!-- =================== Hero =================== -->
+    <section id="home" class="hero" aria-label="Intro">
+      <div class="container hero__grid">
+        <!-- Left column (text-first; no images) -->
+        <div class="hero__content" role="region" aria-labelledby="hero-title">
+          <p class="kicker">We Answer. You Grow.</p>
+          <h1 id="hero-title" class="hero__title">
+            Answer every call. Book every slot. Grow on autopilot.
+          </h1>
+          <p class="hero__sub">
+            GenDesk never misses a call, books Google/Outlook calendars, and automates admin for dentists,
+            law firms, salons, clinics, agencies, and service providers.
           </p>
-          <p>
-            Plug GenDesk into your existing tools and get an AI receptionist that behaves like a trained teammate—without the overhead.
-          </p>
+          <div class="hero__actions" role="group" aria-label="Primary actions">
+            <a class="btn btn--primary" href="#contact">Book a Consult</a>
+            <a class="btn btn--ghost" href="#services" aria-describedby="hero-title">See Services</a>
+          </div>
         </div>
-        <!-- Placeholder: team / culture image -->
-        <!-- TODO: Replace with team photo or founder shot -->
-        <div class="about-media image-placeholder">
-          <div class="placeholder-note">Team image here</div>
-        </div>
-      </div>
 
-      <div class="stats">
-        <div class="stat">
-          <div class="num" data-target="100">0</div>
-          <span class="label">clients</span>
-        </div>
-        <div class="stat">
-          <div class="num" data-target="32">0</div>
-          <span class="label">partners</span>
-        </div>
-        <div class="stat">
-          <div class="num" data-target="3">0</div>
-          <span class="label">industries served</span>
-        </div>
+        <!-- Right column (bottom-anchored visual stack; decorative) -->
+        <div class="hero__visuals" aria-hidden="true">
+  <!-- Orb layer 1 (back) -->
+  <div class="layer orbs--one">
+    <img class="orb-img" src="assets/orb-1.svg" alt="" role="presentation" />
+  </div>
+
+  <!-- Orb layer 2 (mid) -->
+  <div class="layer orbs--two">
+    <img class="orb-img" src="assets/orb-2.svg" alt="" role="presentation" />
+  </div>
+
+  <!-- Calendar **picture** card (supporting visual, not an embed) -->
+  <figure class="hero-calendar mask-soft-vert gloss-overlay" role="presentation">
+    <picture>
+      <source srcset="assets/calendar-hero.webp" type="image/webp" />
+      <img src="assets/calendar-hero.jpg" alt="" width="460" height="240" loading="eager" />
+    </picture>
+  </figure>
+
+  <!-- Optional backdrop wave + noise -->
+  <img class="hero-blob" src="assets/hero-blob.svg" alt="" role="presentation" />
+  <img class="hero-noise" src="assets/noise-10.png" alt="" role="presentation" />
+  <img class="hero-divider" src="assets/divider-wave.svg" alt="" role="presentation" />
+</div>
       </div>
     </section>
 
-    <!-- PROJECTS (placeholder anchor for nav smoothness) -->
-    <section id="projects" class="section container projects">
-      <header class="section-head">
-        <h2>Recent Projects</h2>
-        <p>Case studies and integrations we can walk you through on a call.</p>
-      </header>
-      <div class="project-row">
-        <div class="image-placeholder small"><div class="placeholder-note">Clinic onboarding flow</div></div>
-        <div class="image-placeholder small"><div class="placeholder-note">Law intake + conflicts</div></div>
-        <div class="image-placeholder small"><div class="placeholder-note">Salon auto‑fill + POS</div></div>
-      </div>
-      <p class="muted center">Ask us to show a live demo tailored to your industry.</p>
-    </section>
-
-    <!-- SPECIAL OFFER -->
-    <section class="offer section container" id="offer">
-      <div class="offer-box" data-animate="glow">
-        <div class="badge">Limited-Time Launch Deal</div>
-        <h3>Early client openings this month</h3>
-        <p>
-          We’re onboarding a small batch of businesses now. New signups receive a New client’s discount and white‑glove setup.
-        </p>
-        <ul class="offer-bullets">
-          <li>Priority implementation & training</li>
-          <li>Custom call scripts included</li>
-          <li>Zero‑risk pilot</li>
+    <!-- Optional trust strip (hide until real logos) -->
+    <section class="trust" aria-label="Trusted by">
+      <div class="container trust__inner">
+        <h2 class="visually-hidden">Trusted by</h2>
+        <ul class="trust__logos" role="list">
+          <!-- Add client logos when available -->
         </ul>
-        <a href="#contact" class="btn btn-primary">Claim Your Spot</a>
-        <div class="tiny">Availability updates daily — secure your place before the window closes.</div>
       </div>
     </section>
 
-    <!-- DEMO (anchor only) -->
-    <section id="demo" class="section container demo">
-      <header class="section-head">
-        <h2>Live Demo</h2>
-        <p>See how GenDesk handles a real call and books an appointment into your calendar.</p>
-      </header>
-      <div class="image-placeholder wide">
-        <!-- TODO: Replace with an embedded demo video or interactive widget -->
-        <div class="placeholder-note">Embed demo video here</div>
+    <!-- =================== Services =================== -->
+    <section id="services" class="services" aria-labelledby="services-title">
+      <div class="container">
+        <header class="section__header">
+          <h2 id="services-title" class="section__title">Services.</h2>
+          <p class="section__kicker">Our services for clients</p>
+        </header>
+
+        <div class="services__grid" role="list">
+          <article class="card service" role="listitem">
+            <header class="card__header">
+              <span class="icon" aria-hidden="true">☎️</span>
+              <h3 class="card__title">AI Call Answering</h3>
+            </header>
+            <p class="card__body">24/7 reception that captures every caller and routes them intelligently.</p>
+          </article>
+
+          <article class="card service" role="listitem">
+            <header class="card__header">
+              <span class="icon" aria-hidden="true">📅</span>
+              <h3 class="card__title">Auto-Scheduling</h3>
+            </header>
+            <p class="card__body">Seamless Google/Outlook integration to book and confirm appointments.</p>
+          </article>
+
+          <article class="card service" role="listitem">
+            <header class="card__header">
+              <span class="icon" aria-hidden="true">⚙️</span>
+              <h3 class="card__title">Admin Automation</h3>
+            </header>
+            <p class="card__body">Intake, reminders, follow-ups, and paperwork handled automatically.</p>
+          </article>
+
+          <article class="card service" role="listitem">
+            <header class="card__header">
+              <span class="icon" aria-hidden="true">💬</span>
+              <h3 class="card__title">Client Interaction</h3>
+            </header>
+            <p class="card__body">SMS/email confirmations, rescheduling, and FAQs handled with care.</p>
+          </article>
+
+          <article class="card service" role="listitem">
+            <header class="card__header">
+              <span class="icon" aria-hidden="true">🔌</span>
+              <h3 class="card__title">Integrations</h3>
+            </header>
+            <p class="card__body">Connect your tools and CRMs without the busywork.</p>
+          </article>
+
+          <article class="card service" role="listitem">
+            <header class="card__header">
+              <span class="icon" aria-hidden="true">📈</span>
+              <h3 class="card__title">Analytics &amp; Reporting</h3>
+            </header>
+            <p class="card__body">Track calls answered, bookings made, and time saved — all in one view.</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section class="contact section container" id="contact">
-      <header class="section-head">
-        <h2>Talk to Us</h2>
-        <p>Tell us about your workflow and we’ll map the fastest path to value.</p>
-      </header>
-      <form class="contact-form" onsubmit="event.preventDefault(); alert('Thanks — we’ll reach out shortly.');">
-        <div class="grid">
-          <label>Full Name
-            <input type="text" placeholder="Jordan Smith" required>
-          </label>
-          <label>Business Email
-            <input type="email" placeholder="jordan@company.com" required>
-          </label>
-          <label>Company
-            <input type="text" placeholder="Bright Dental" required>
-          </label>
-          <label>Industry
-            <select required>
-              <option value="">Select…</option>
-              <option>Dentistry</option>
-              <option>Law</option>
-              <option>Medical Clinic</option>
-              <option>Salon/Spa</option>
-              <option>Agency/Consulting</option>
-              <option>Other</option>
+    <!-- =================== About =================== -->
+    <section id="about" class="about" aria-labelledby="about-title">
+      <div class="container about__grid">
+        <header class="section__header">
+          <h2 id="about-title" class="section__title">About GenDesk</h2>
+          <p class="section__kicker">We keep your front desk always on.</p>
+        </header>
+
+        <figure class="about__image gloss-overlay" role="img" aria-label="GenDesk team working with clients">
+          <picture>
+            <source srcset="assets/call-portrait.webp" type="image/webp" />
+            <img src="assets/pexels-jep-gambardella-7689734.jpg" alt="Team member assisting a client at a modern front desk" loading="lazy" />
+          </picture>
+        </figure>
+
+        <ul class="about__stats" role="list" aria-label="Key stats">
+          <li class="stat"><strong class="stat__value">24/7</strong><span class="stat__label">coverage</span></li>
+          <li class="stat"><strong class="stat__value">+38%</strong><span class="stat__label">more bookings</span></li>
+          <li class="stat"><strong class="stat__value">-60%</strong><span class="stat__label">admin time</span></li>
+        </ul>
+
+        <p class="about__body">
+          GenDesk pairs AI reception with practical ops tools. From first hello to confirmed appointment,
+          we remove friction so your practice never loses momentum.
+        </p>
+      </div>
+    </section>
+
+    <!-- =================== Offer Band =================== -->
+    <section class="offer" aria-labelledby="offer-title">
+      <div class="container offer__inner">
+        <span class="badge" aria-label="Limited-time">Limited-time</span>
+        <h3 id="offer-title" class="offer__title">Founders pricing for early teams</h3>
+        <a class="btn btn--primary" href="#contact" aria-describedby="offer-title">Claim Offer</a>
+      </div>
+    </section>
+
+    <!-- =================== Demo Slot (16:9 ready) =================== -->
+    <section id="demo" class="demo" aria-labelledby="demo-title">
+      <div class="container">
+        <header class="section__header">
+          <h2 id="demo-title" class="section__title">Product Demo</h2>
+          <p class="section__kicker">Drop in your video when ready.</p>
+        </header>
+
+        <figure class="demo__player" role="group" aria-label="Demo video">
+          <img src="assets/divider-wave.svg" alt="" role="presentation" />
+          <figcaption class="visually-hidden">Click play to watch the GenDesk demo.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- =================== Scheduling (below the fold) =================== -->
+    <section id="calendar" class="calendar" aria-labelledby="calendar-title">
+      <div class="container">
+        <header class="section__header">
+          <h2 id="calendar-title" class="section__title">Scheduling</h2>
+          <p class="section__kicker">Book a time that works for you.</p>
+        </header>
+
+       <div class="calendar__embed" role="region" aria-label="Booking card">
+  <figure class="calendar-card gloss-overlay">
+    <picture>
+      <source srcset="assets/calendar-hero.webp" type="image/webp" />
+      <img src="assets/calendar-hero.jpg" alt="Sample availability calendar" width="1280" height="720" loading="lazy" />
+    </picture>
+    <figcaption class="calendar-caption">
+      Real-time booking open — request a time and we’ll schedule you.
+      <a class="btn btn--primary" href="#contact" style="margin-left:.6rem">Request a time</a>
+    </figcaption>
+  </figure>
+</div>
+    </section>
+
+    <!-- =================== Contact =================== -->
+    <section id="contact" class="contact" aria-labelledby="contact-title">
+      <div class="container contact__grid">
+        <header class="section__header">
+          <h2 id="contact-title" class="section__title">Contact</h2>
+          <p class="section__kicker">Tell us about your business.</p>
+        </header>
+
+        <form class="form" method="post" action="#" novalidate aria-describedby="form-help">
+          <div class="form__row">
+            <label class="form__label" for="name">Name</label>
+            <input class="form__input" id="name" name="name" type="text" autocomplete="name" required />
+          </div>
+
+          <div class="form__row">
+            <label class="form__label" for="email">Email</label>
+            <input class="form__input" id="email" name="email" type="email" autocomplete="email" required />
+          </div>
+
+          <div class="form__row">
+            <label class="form__label" for="company">Company</label>
+            <input class="form__input" id="company" name="company" type="text" autocomplete="organization" />
+          </div>
+
+          <div class="form__row">
+            <label class="form__label" for="service">Service</label>
+            <select class="form__select" id="service" name="service" required>
+              <option value="">Select a service…</option>
+              <option>AI Call Answering</option>
+              <option>Auto-Scheduling</option>
+              <option>Admin Automation</option>
+              <option>Client Interaction</option>
+              <option>Integrations</option>
+              <option>Analytics &amp; Reporting</option>
             </select>
-          </label>
-        </div>
-        <label>What problem should we solve first?
-          <textarea rows="4" placeholder="E.g., Missed calls after hours, double booking, intake backlog…"></textarea>
-        </label>
-        <div class="actions">
-          <button class="btn btn-primary" type="submit">Request Consultation</button>
-          <a class="btn btn-ghost" href="mailto:Gendeskassistant@gmail.com">Email Us</a>
-        </div>
-      </form>
+          </div>
+
+          <div class="form__row">
+            <label class="form__label" for="message">Message</label>
+            <textarea class="form__textarea" id="message" name="message" rows="5"></textarea>
+          </div>
+
+          <!-- Honeypot (hidden via CSS later) -->
+          <div class="form__row form__honeypot" aria-hidden="true">
+            <label for="website">Website</label>
+            <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <p id="form-help" class="form__help">We’ll reply within one business day.</p>
+
+          <div class="form__actions">
+            <button class="btn btn--primary" type="submit">Send</button>
+          </div>
+
+          <div class="form__status" role="status" aria-live="polite"></div>
+        </form>
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="brand">
-        <span class="logo">GenDesk</span>
-        <p class="muted">AI receptionist & productivity platform for modern service businesses.</p>
-        <div class="socials">
-          <a aria-label="LinkedIn" href="#" title="LinkedIn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0h4.8v2.2h.1c.7-1.3 2.3-2.7 4.7-2.7 5 0 5.9 3.3 5.9 7.6V24h-5V16.3c0-1.8 0-4.1-2.5-4.1-2.5 0-2.9 2-2.9 4V24h-5V8z" fill="currentColor"/></svg>
-          </a>
-          <a aria-label="Twitter/X" href="#" title="Twitter">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2H21.5l-7.5 8.566L23.5 22h-7.307l-5.717-6.5L3.5 22H.243l8.29-9.46L.5 2h7.5l5.16 5.934L18.244 2Zm-1.28 18h2.119L7.119 4H5.12l11.844 16Z" fill="currentColor"/></svg>
-          </a>
-          <a aria-label="GitHub" href="#" title="GitHub">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 .5A11.5 11.5 0 0 0 .5 12c0 5.08 3.29 9.38 7.86 10.9.58.1.79-.26.79-.57v-2.1c-3.2.7-3.88-1.37-3.88-1.37-.53-1.36-1.3-1.73-1.3-1.73-1.07-.73.08-.72.08-.72 1.18.08 1.8 1.22 1.8 1.22 1.05 1.8 2.76 1.28 3.43.98.1-.77.41-1.28.74-1.58-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.3 1.2-3.11-.12-.3-.52-1.52.12-3.17 0 0 .98-.31 3.2 1.19a11.1 11.1 0 0 1 5.82 0c2.22-1.5 3.2-1.19 3.2-1.19.64 1.65.24 2.87.12 3.17.75.81 1.2 1.85 1.2 3.11 0 4.43-2.7 5.4-5.27 5.68.42.36.8 1.08.8 2.19v3.25c0 .32.21.69.8.57A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z" fill="currentColor"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <ul class="footer-nav">
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#offer">Offer</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-
-      <div class="legal">
-        <span>© <span id="year"></span> GenDesk, Inc.</span>
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
-      </div>
+  <!-- =================== Footer =================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer__inner">
+      <p class="footer__brand">© <span data-year>2025</span> GenDesk</p>
+      <nav class="footer__nav" aria-label="Footer">
+        <ul class="footer__list">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#demo">Demo</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+        </ul>
+      </nav>
     </div>
   </footer>
+
+  <!-- JS hook (not included yet) -->
+  <script src="scripts.js" defer></script>
+
+  <noscript>This site uses small, accessibility-friendly effects. Everything works without JavaScript.</noscript>
 </body>
 </html>
