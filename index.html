@@ -474,54 +474,69 @@
           <p class="section__kicker">Tell us about your business.</p>
         </header>
 
-        <form class="form" method="post" action="#" novalidate aria-describedby="form-help">
-          <div class="form__row">
-            <label class="form__label" for="name">Name</label>
-            <input class="form__input" id="name" name="name" type="text" autocomplete="name" required />
-          </div>
+        <form id="contact-form"
+      class="form"
+      action="https://getform.io/f/adrdonga"
+      method="POST"
+      accept-charset="UTF-8"
+      aria-describedby="form-help">
 
-          <div class="form__row">
-            <label class="form__label" for="email">Email</label>
-            <input class="form__input" id="email" name="email" type="email" autocomplete="email" required />
-          </div>
+  <!-- anti-spam (Getform’s honeypot) -->
+  <input type="hidden" name="_gotcha" style="display:none !important">
 
-          <div class="form__row">
-            <label class="form__label" for="company">Company</label>
-            <input class="form__input" id="company" name="company" type="text" autocomplete="organization" />
-          </div>
+  <!-- optional: customize email subject in notifications -->
+  <input type="hidden" name="_subject" value="GenDesk Website — New Inquiry">
 
-          <div class="form__row">
-            <label class="form__label" for="service">Service</label>
-            <select class="form__select" id="service" name="service" required>
-              <option value="">Select a service…</option>
-              <option>AI Call Answering</option>
-              <option>Auto-Scheduling</option>
-              <option>Admin Automation</option>
-              <option>Client Interaction</option>
-              <option>Integrations</option>
-              <option>Analytics &amp; Reporting</option>
-            </select>
-          </div>
+  <!-- optional: redirect to a thank-you page AFTER successful submit -->
+  <input type="hidden" name="_redirect" value="/thanks.html">
 
-          <div class="form__row">
-            <label class="form__label" for="message">Message</label>
-            <textarea class="form__textarea" id="message" name="message" rows="5"></textarea>
-          </div>
+  <div class="form__row">
+    <label class="form__label" for="name">Name</label>
+    <input class="form__input" id="name" name="name" type="text" autocomplete="name" required>
+  </div>
 
-          <!-- Honeypot (hide with CSS later) -->
-          <div class="form__row form__honeypot" aria-hidden="true">
-            <label for="website">Website</label>
-            <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
-          </div>
+  <div class="form__row">
+    <label class="form__label" for="email">Email</label>
+    <input class="form__input" id="email" name="email" type="email" autocomplete="email" required>
+  </div>
 
-          <p id="form-help" class="form__help">We’ll reply within one business day.</p>
+  <div class="form__row">
+    <label class="form__label" for="company">Company</label>
+    <input class="form__input" id="company" name="company" type="text" autocomplete="organization">
+  </div>
 
-          <div class="form__actions">
-            <button class="btn btn--primary" type="submit">Send</button>
-          </div>
+  <div class="form__row">
+    <label class="form__label" for="service">Service</label>
+    <select class="form__select" id="service" name="service" required>
+      <option value="">Select a service…</option>
+      <option>AI Call Answering</option>
+      <option>Auto-Scheduling</option>
+      <option>Admin Automation</option>
+      <option>Client Interaction</option>
+      <option>Integrations</option>
+      <option>Analytics &amp; Reporting</option>
+    </select>
+  </div>
 
-          <div class="form__status" role="status" aria-live="polite"></div>
-        </form>
+  <div class="form__row">
+    <label class="form__label" for="message">Message</label>
+    <textarea class="form__textarea" id="message" name="message" rows="5"></textarea>
+  </div>
+
+  <!-- (optional extra honeypot you already had; safe to keep) -->
+  <div class="form__row form__honeypot" aria-hidden="true">
+    <label for="website">Website</label>
+    <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+  </div>
+
+  <p id="form-help" class="form__help">We’ll reply within one business day.</p>
+
+  <div class="form__actions">
+    <button class="btn btn--primary" type="submit">Send</button>
+  </div>
+
+  <div class="form__status" role="status" aria-live="polite"></div>
+</form>
       </div>
     </section>
   </main>
