@@ -2,71 +2,51 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>GenDesk — AI Receptionist & Admin Automation for SMBs</title>
+  <title>GenDesk — AI Receptionist & Admin Automation (CAD)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="GenDesk answers every call, books your calendar, and automates admin for growing practices and agencies." />
+  <meta name="description" content="GenDesk answers every call, books your calendar, and automates admin for clinics, salons, dental offices, agencies, and local service businesses." />
   <meta name="theme-color" content="#0b0e11" />
 
-  <!-- Favicons / PWA -->
+  <!-- Favicons / PWA (assets provided in your repo) -->
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="alternate icon" type="image/png" href="assets/favicon-96x96.png" sizes="96x96">
   <link rel="shortcut icon" href="assets/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
 
-  <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="GenDesk — AI Receptionist & Admin Automation" />
-  <meta property="og:description" content="Answer every call. Book every slot. Grow on autopilot." />
-  <meta property="og:image" content="assets/gendesk-icon.png" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- Preloads for LCP candidates -->
-  <link rel="preload" as="image"
-        href="assets/call-portrait.webp"
-        imagesrcset="assets/call-portrait.webp 1x, assets/call-portrait.webp 2x"
-        imagesizes="(min-width: 1024px) 520px, 60vw">
+  <!-- Preloads for likely LCP candidates (images only; CSS/JS will be added later) -->
   <link rel="preload" as="image" href="assets/calendar-hero.webp">
+  <link rel="preload" as="image" href="assets/orb-1.svg">
+  <link rel="preload" as="image" href="assets/orb-2.svg">
 
-  <!-- Hook up site CSS (not included yet) -->
+  <!-- External files (not included here, just referenced) -->
   <link rel="stylesheet" href="styles.css">
-
-  <!-- Structured data -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"GenDesk",
-    "url":"https://yourdomain.example",
-    "logo":"https://yourdomain.example/assets/gendesk-icon.png",
-    "sameAs": []
-  }
-  </script>
 </head>
 
 <body>
-  <!-- Skip link -->
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- =================== Header =================== -->
   <header class="site-header" role="banner">
     <div class="container header__inner">
-     <a class="brand" href="/" aria-label="GenDesk home">
-  <img class="brand__icon" src="assets/favicon.svg" alt="" width="40" height="40" />
-  <span class="brand__word">GenDesk Ltd.</span>
-</a>
+      <a class="brand" href="#home" aria-label="GenDesk home">
+        <img class="brand__icon" src="assets/favicon.svg" alt="" width="40" height="40" />
+        <span class="brand__word">GenDesk</span>
+      </a>
 
       <nav class="nav" aria-label="Primary">
         <button class="nav__toggle" aria-expanded="false" aria-controls="nav-list">
           <span class="visually-hidden">Toggle navigation</span>
         </button>
-        <ul id="nav-list" class="nav__list">
-          <li class="nav__item"><a class="nav__link" href="#home" aria-current="page">Home</a></li>
-          <li class="nav__item"><a class="nav__link" href="#services">Services</a></li>
-          <li class="nav__item"><a class="nav__link" href="#about">About</a></li>
-          <li class="nav__item"><a class="nav__link" href="#demo">Demo</a></li>
-          <li class="nav__item"><a class="nav__link" href="#contact">Contact</a></li>
-        </ul>
+       <ul id="nav-list" class="nav__list">
+  <li class="nav__item"><a class="nav__link" href="#home" aria-current="page">Home</a></li>
+  <li class="nav__item"><a class="nav__link" href="#services">Services</a></li>
+  <li class="nav__item"><a class="nav__link" href="#about">About</a></li>
+  <li class="nav__item"><a class="nav__link" href="#pricing">Pricing</a></li>
+  <li class="nav__item"><a class="nav__link" href="#faq">FAQ</a></li>
+  <li class="nav__item"><a class="nav__link" href="#demo">Demo</a></li>
+  <li class="nav__item"><a class="nav__link" href="#contact">Contact</a></li>
+</ul>
       </nav>
 
       <div class="header__cta">
@@ -76,60 +56,44 @@
   </header>
 
   <main id="main" tabindex="-1">
-    <!-- =================== Hero =================== -->
+    <!-- =================== Hero (text-first; no portrait) =================== -->
     <section id="home" class="hero" aria-label="Intro">
       <div class="container hero__grid">
-        <!-- Left column (text-first; no images) -->
+        <!-- Left column -->
         <div class="hero__content" role="region" aria-labelledby="hero-title">
           <p class="kicker">We Answer. You Grow.</p>
           <h1 id="hero-title" class="hero__title">
             Answer every call. Book every slot. Grow on autopilot.
           </h1>
           <p class="hero__sub">
-            GenDesk never misses a call, books Google/Outlook calendars, and automates admin for dentists,
-            law firms, salons, clinics, agencies, and service providers.
+            GenDesk answers calls 24/7, books Google/Outlook calendars, and automates admin for clinics, salons, dental offices, agencies, and local service businesses.
           </p>
           <div class="hero__actions" role="group" aria-label="Primary actions">
-            <a class="btn btn--primary" href="#contact">Book a Consult</a>
-            <a class="btn btn--ghost" href="#services" aria-describedby="hero-title">See Services</a>
+            <a class="btn btn--primary btn--magnetic" href="#pricing"><span class="btn__inner">See Pricing</span></a>
+            <a class="btn btn--ghost btn--magnetic" href="#services" aria-describedby="hero-title"><span class="btn__inner">See Services</span></a>
           </div>
         </div>
 
-        <!-- Right column (bottom-anchored visual stack; decorative) -->
+        <!-- Right column: depthy shapes + static calendar card (decorative) -->
         <div class="hero__visuals" aria-hidden="true">
-  <!-- Orb layer 1 (back) -->
-  <div class="layer orbs--one">
-    <img class="orb-img" src="assets/orb-1.svg" alt="" role="presentation" />
-  </div>
+          <div class="layer orbs--one">
+            <img class="orb-img" src="assets/orb-1.svg" alt="" role="presentation" />
+          </div>
+          <div class="layer orbs--two">
+            <img class="orb-img" src="assets/orb-2.svg" alt="" role="presentation" />
+          </div>
 
-  <!-- Orb layer 2 (mid) -->
-  <div class="layer orbs--two">
-    <img class="orb-img" src="assets/orb-2.svg" alt="" role="presentation" />
-  </div>
+          <figure class="hero-calendar mask-soft-vert gloss-overlay" role="presentation">
+            <picture>
+              <source srcset="assets/calendar-hero.webp" type="image/webp" />
+              <img src="assets/calendar-hero.jpg" alt="" width="460" height="240" loading="eager" />
+            </picture>
+          </figure>
 
-  <!-- Calendar **picture** card (supporting visual, not an embed) -->
-  <figure class="hero-calendar mask-soft-vert gloss-overlay" role="presentation">
-    <picture>
-      <source srcset="assets/calendar-hero.webp" type="image/webp" />
-      <img src="assets/calendar-hero.jpg" alt="" width="460" height="240" loading="eager" />
-    </picture>
-  </figure>
-
-  <!-- Optional backdrop wave + noise -->
-  <img class="hero-blob" src="assets/hero-blob.svg" alt="" role="presentation" />
-  <img class="hero-noise" src="assets/noise-10.png" alt="" role="presentation" />
-  <img class="hero-divider" src="assets/divider-wave.svg" alt="" role="presentation" />
-</div>
-      </div>
-    </section>
-
-    <!-- Optional trust strip (hide until real logos) -->
-    <section class="trust" aria-label="Trusted by">
-      <div class="container trust__inner">
-        <h2 class="visually-hidden">Trusted by</h2>
-        <ul class="trust__logos" role="list">
-          <!-- Add client logos when available -->
-        </ul>
+          <img class="hero-blob" src="assets/hero-blob.svg" alt="" role="presentation" />
+          <img class="hero-noise" src="assets/noise-10.png" alt="" role="presentation" />
+          <img class="hero-divider" src="assets/divider-wave.svg" alt="" role="presentation" />
+        </div>
       </div>
     </section>
 
@@ -194,78 +158,313 @@
     </section>
 
     <!-- =================== About =================== -->
-    <section id="about" class="about" aria-labelledby="about-title">
-      <div class="container about__grid">
-        <header class="section__header">
-          <h2 id="about-title" class="section__title">About GenDesk</h2>
-          <p class="section__kicker">We keep your front desk always on.</p>
-        </header>
+<section id="about" class="about" aria-labelledby="about-title">
+  <div class="container about__grid">
+    <header class="section__header">
+      <h2 id="about-title" class="section__title">About GenDesk</h2>
+      <p class="section__kicker">Built by a young founder with big goals</p>
+    </header>
 
-        <figure class="about__image gloss-overlay" role="img" aria-label="GenDesk team working with clients">
-          <picture>
-            <source srcset="assets/call-portrait.webp" type="image/webp" />
-            <img src="assets/pexels-jep-gambardella-7689734.jpg" alt="Team member assisting a client at a modern front desk" loading="lazy" />
-          </picture>
-        </figure>
+    <!-- call-portrait image lives in About (not hero) -->
+    <figure class="about__image gloss-overlay" role="img" aria-label="GenDesk founder working with clients">
+      <picture>
+        <source srcset="assets/call-portrait.webp" type="image/webp" />
+        <img src="assets/pexels-jep-gambardella-7689734.jpg" alt="Founder assisting a client at a modern front desk" loading="lazy" />
+      </picture>
+    </figure>
 
-        <ul class="about__stats" role="list" aria-label="Key stats">
-          <li class="stat"><strong class="stat__value">24/7</strong><span class="stat__label">coverage</span></li>
-          <li class="stat"><strong class="stat__value">+38%</strong><span class="stat__label">more bookings</span></li>
-          <li class="stat"><strong class="stat__value">-60%</strong><span class="stat__label">admin time</span></li>
-        </ul>
+    <div class="about__copy">
+      <p>
+        I’m a young business owner building GenDesk because I believe every local business deserves a
+        professional front desk that never sleeps. I’m here to make work easier and more effective—
+        so you can focus on clients and growth, not busywork.
+      </p>
+      <p>
+        GenDesk combines AI call answering, scheduling, and helpful admin tools to help clinics,
+        salons, dental offices, agencies, and service businesses capture more opportunities and run leaner.
+        We’re constantly improving based on real feedback, not hype.
+      </p>
+    </div>
 
-        <p class="about__body">
-          GenDesk pairs AI reception with practical ops tools. From first hello to confirmed appointment,
-          we remove friction so your practice never loses momentum.
-        </p>
-      </div>
-    </section>
+    <ul class="about__stats" role="list" aria-label="Key stats">
+      <li class="stat"><strong class="stat__value">24/7</strong><span class="stat__label">coverage</span></li>
+      <li class="stat"><strong class="stat__value">+30–40%</strong><span class="stat__label">more bookings</span></li>
+      <li class="stat"><strong class="stat__value">-60%</strong><span class="stat__label">admin time</span></li>
+    </ul>
+  </div>
+</section>
 
     <!-- =================== Offer Band =================== -->
     <section class="offer" aria-labelledby="offer-title">
       <div class="container offer__inner">
         <span class="badge" aria-label="Limited-time">Limited-time</span>
         <h3 id="offer-title" class="offer__title">Founders pricing for early teams</h3>
-        <a class="btn btn--primary" href="#contact" aria-describedby="offer-title">Claim Offer</a>
+        <a class="btn btn--primary" href="#pricing" aria-describedby="offer-title">See Plans</a>
       </div>
     </section>
 
-    <!-- =================== Demo Slot (16:9 ready) =================== -->
-    <section id="demo" class="demo" aria-labelledby="demo-title">
+    <!-- =================== Pricing (CAD) — no-JS tabs =================== -->
+    <section id="pricing" class="pricing" aria-labelledby="pricing-title">
       <div class="container">
         <header class="section__header">
-          <h2 id="demo-title" class="section__title">Product Demo</h2>
-          <p class="section__kicker">Drop in your video when ready.</p>
+          <h2 id="pricing-title" class="section__title">Pricing</h2>
+          <p class="section__kicker">Simple plans that scale with you</p>
         </header>
 
-        <figure class="demo__player" role="group" aria-label="Demo video">
-          <img src="assets/divider-wave.svg" alt="" role="presentation" />
-          <figcaption class="visually-hidden">Click play to watch the GenDesk demo.</figcaption>
-        </figure>
+        <!-- Promo note + CAD chip -->
+        <div class="pricing__meta" role="note" aria-label="Promo and currency">
+          <span class="chip chip--cad" aria-label="Currency">CAD</span>
+          <span class="promo">Enter code <strong>FIRST25</strong> at checkout for <strong>25% off first term</strong>.</span>
+        </div>
+
+        <!-- Tabs (radio-based, accessible) -->
+        <fieldset class="billing" role="radiogroup" aria-label="Billing period">
+          <legend class="visually-hidden">Billing period</legend>
+
+          <input type="radio" name="bill" id="bill-monthly" class="billing__radio" checked>
+          <label for="bill-monthly" class="billing__btn">Monthly</label>
+
+          <input type="radio" name="bill" id="bill-quarter" class="billing__radio">
+          <label for="bill-quarter" class="billing__btn">
+            3-Month <span class="badge badge--save" aria-label="Save">Save vs monthly</span>
+          </label>
+
+          <input type="radio" name="bill" id="bill-yearly" class="billing__radio">
+          <label for="bill-yearly" class="billing__btn">
+            Yearly <span class="badge badge--save" aria-label="Save">Save vs monthly</span>
+          </label>
+        </fieldset>
+
+        <!-- Plans grid: show one CTA per plan; CSS will reveal the correct link per active tab -->
+        <div class="pricing__grid" role="list">
+          <!-- Starter -->
+          <article class="plan card" role="listitem" aria-labelledby="plan-starter-title">
+            <header class="plan__header">
+              <h3 id="plan-starter-title" class="plan__title">Starter</h3>
+              <p class="plan__tag">For solo owners who want a 24/7 professional presence.</p>
+            </header>
+
+            <ul class="plan__features">
+              <li><span class="check" aria-hidden="true">✓</span> 1 phone number</li>
+              <li><span class="check" aria-hidden="true">✓</span> 24/7 AI call answering</li>
+              <li><span class="check" aria-hidden="true">✓</span> Calendar integration (Google, Outlook)</li>
+              <li><span class="check" aria-hidden="true">✓</span> Message handling + daily summaries</li>
+              <li><span class="check" aria-hidden="true">✓</span> Basic call log</li>
+              <li><span class="check" aria-hidden="true">✓</span> Business hours customization</li>
+              <li><span class="check" aria-hidden="true">✓</span> Email notifications</li>
+            </ul>
+
+            <!-- Price displays (one visible per tab via CSS) -->
+            <div class="plan__price">
+              <span class="price price--monthly" aria-live="polite">$35 <small>/ mo</small></span>
+              <span class="price price--quarter" aria-live="polite">$95 <small>/ 3 mo</small></span>
+              <span class="price price--yearly" aria-live="polite">$360 <small>/ yr</small></span>
+            </div>
+
+            <!-- Checkout CTAs (exact Stripe links per period) -->
+            <div class="plan__actions" role="group" aria-label="Starter checkout">
+              <a class="btn btn--primary cta cta--monthly" href="https://buy.stripe.com/9B6dRa0wm6zd3Mi9Og6kg06">Get Starter — Monthly</a>
+              <a class="btn btn--primary cta cta--quarter" href="https://buy.stripe.com/00weVedj8g9NbeKbWo6kg07">Get Starter — 3-Month</a>
+              <a class="btn btn--primary cta cta--yearly" href="https://buy.stripe.com/fZu7sM92S8Hl5Uqd0s6kg08">Get Starter — Yearly</a>
+            </div>
+
+            <p class="plan__bundles" role="note"><strong>Bundles:</strong> $95 / 3 months · $360 / year (save 14%)</p>
+          </article>
+
+          <!-- Business Builder -->
+          <article class="plan card plan--highlight" role="listitem" aria-labelledby="plan-builder-title">
+            <div class="plan__badge" aria-hidden="true">Best offer</div>
+            <header class="plan__header">
+              <h3 id="plan-builder-title" class="plan__title">Business Builder</h3>
+              <p class="plan__tag">For growing teams with more traffic and deeper features.</p>
+            </header>
+
+            <ul class="plan__features">
+              <li><span class="check" aria-hidden="true">✓</span> Everything in Starter</li>
+              <li><span class="check" aria-hidden="true">✓</span> Up to 3 phone numbers</li>
+              <li><span class="check" aria-hidden="true">✓</span> Up to 3 users</li>
+              <li><span class="check" aria-hidden="true">✓</span> Call transcripts</li>
+              <li><span class="check" aria-hidden="true">✓</span> SMS + email notifications</li>
+              <li><span class="check" aria-hidden="true">✓</span> Smart booking preferences</li>
+              <li><span class="check" aria-hidden="true">✓</span> Priority message routing</li>
+            </ul>
+
+            <div class="plan__price">
+              <span class="price price--monthly" aria-live="polite">$79 <small>/ mo</small></span>
+              <span class="price price--quarter" aria-live="polite">$215 <small>/ 3 mo</small></span>
+              <span class="price price--yearly" aria-live="polite">$830 <small>/ yr</small></span>
+            </div>
+
+            <div class="plan__actions" role="group" aria-label="Business Builder checkout">
+              <a class="btn btn--primary cta cta--monthly" href="https://buy.stripe.com/7sY5kEfrgbTx96C0dG6kg03">Get Builder — Monthly</a>
+              <a class="btn btn--primary cta cta--quarter" href="https://buy.stripe.com/9B6bJ2a6W8Hlfv0aSk6kg05">Get Builder — 3-Month</a>
+              <a class="btn btn--primary cta cta--yearly" href="https://buy.stripe.com/8x25kEcf4g9N2Ief8A6kg04">Get Builder — Yearly</a>
+            </div>
+          </article>
+
+          <!-- Pro+ for Agencies -->
+          <article class="plan card" role="listitem" aria-labelledby="plan-pro-title">
+            <header class="plan__header">
+              <h3 id="plan-pro-title" class="plan__title">Pro+ for Agencies</h3>
+              <p class="plan__tag">For high-volume teams that need advanced routing and analytics.</p>
+            </header>
+
+            <ul class="plan__features">
+              <li><span class="check" aria-hidden="true">✓</span> Everything in Business Builder</li>
+              <li><span class="check" aria-hidden="true">✓</span> Up to 5 phone numbers</li>
+              <li><span class="check" aria-hidden="true">✓</span> Up to 10 users</li>
+              <li><span class="check" aria-hidden="true">✓</span> Advanced call routing <em>(coming soon)</em></li>
+              <li><span class="check" aria-hidden="true">✓</span> CRM integrations <em>(coming soon)</em></li>
+              <li><span class="check" aria-hidden="true">✓</span> Analytics dashboard</li>
+              <li><span class="check" aria-hidden="true">✓</span> Dedicated onboarding support</li>
+            </ul>
+
+            <div class="plan__price">
+              <span class="price price--monthly" aria-live="polite">$149 <small>/ mo</small></span>
+              <span class="price price--quarter" aria-live="polite">$405 <small>/ 3 mo</small></span>
+              <span class="price price--yearly" aria-live="polite">$1,560 <small>/ yr</small></span>
+            </div>
+
+            <div class="plan__actions" role="group" aria-label="Pro+ checkout">
+              <a class="btn btn--primary cta cta--monthly" href="https://buy.stripe.com/14A7sMfrgcXBciO7G86kg00">Get Pro+ — Monthly</a>
+              <a class="btn btn--primary cta cta--quarter" href="https://buy.stripe.com/bJebJ292S4r582y6C46kg01">Get Pro+ — 3-Month</a>
+              <a class="btn btn--primary cta cta--yearly" href="https://buy.stripe.com/3cI9AUa6WbTx5Uqd0s6kg02">Get Pro+ — Yearly</a>
+            </div>
+
+            <p class="plan__bundles" role="note"><strong>Bundles:</strong> $405 / 3 months · $1,560 / year (save 13%)</p>
+          </article>
+        </div>
+
+        <p class="pricing__footnote" role="note">All prices in <strong>CAD</strong>. Taxes calculated automatically at checkout.</p>
       </div>
     </section>
 
-    <!-- =================== Scheduling (below the fold) =================== -->
-    <section id="calendar" class="calendar" aria-labelledby="calendar-title">
+    <!-- =================== FAQ =================== -->
+    <section id="faq" class="faq" aria-labelledby="faq-title">
       <div class="container">
         <header class="section__header">
-          <h2 id="calendar-title" class="section__title">Scheduling</h2>
-          <p class="section__kicker">Book a time that works for you.</p>
+          <h2 id="faq-title" class="section__title">Frequently Asked Questions</h2>
+          <p class="section__kicker">Answers for businesses</p>
         </header>
 
-       <div class="calendar__embed" role="region" aria-label="Booking card">
-  <figure class="calendar-card gloss-overlay">
-    <picture>
-      <source srcset="assets/calendar-hero.webp" type="image/webp" />
-      <img src="assets/calendar-hero.jpg" alt="Sample availability calendar" width="1280" height="720" loading="lazy" />
-    </picture>
-    <figcaption class="calendar-caption">
-      Real-time booking open — request a time and we’ll schedule you.
-      <a class="btn btn--primary" href="#contact" style="margin-left:.6rem">Request a time</a>
-    </figcaption>
-  </figure>
-</div>
+        <ol class="faq__list" role="list">
+          <li class="faq__item">
+            <details>
+              <summary>What exactly does GenDesk do?</summary>
+              <div class="faq__content">
+                GenDesk answers calls, books appointments, handles inquiries, and updates your calendar — all automatically, 24/7.
+              </div>
+            </details>
+          </li>
+          <li class="faq__item">
+            <details>
+              <summary>Does GenDesk replace my human receptionist?</summary>
+              <div class="faq__content">
+                No. It handles the routine admin (calls, scheduling, FAQs), so your staff can focus on real work.
+              </div>
+            </details>
+          </li>
+          <li class="faq__item">
+            <details>
+              <summary>Can it integrate with my calendar or booking system?</summary>
+              <div class="faq__content">
+                Yes — GenDesk integrates with Google Calendar, Outlook, and most booking systems.
+              </div>
+            </details>
+          </li>
+          <li class="faq__item">
+            <details>
+              <summary>What types of businesses is GenDesk for?</summary>
+              <div class="faq__content">
+                Clinics, salons, dental offices, small agencies, and local service businesses who want fewer missed calls and smoother customer flow.
+              </div>
+            </details>
+          </li>
+          <li class="faq__item">
+            <details>
+              <summary>Can it answer questions specific to my business?</summary>
+              <div class="faq__content">
+                Yes — you can train GenDesk with custom instructions, FAQs, and business details.
+              </div>
+            </details>
+          </li>
+          <li class="faq__item">
+            <details>
+              <summary>Does it work after business hours?</summary>
+              <div class="faq__content">
+                Yes — 24/7. Perfect for rural businesses or operations with no night staff.
+              </div>
+            </details>
+          </li>
+          <li class="faq__item">
+            <details>
+              <summary>How accurate is the call answering?</summary>
+              <div class="faq__content">
+                GenDesk uses AI to transcribe, understand, and respond. Accuracy increases as it learns your business.
+              </div>
+            </details>
+          </li>
+          <li class="faq__item">
+            <details>
+              <summary>What happens if GenDesk can’t handle something?</summary>
+              <div class="faq__content">
+                It forwards the call or message to your team instantly.
+              </div>
+            </details>
+          </li>
+          <li class="faq__item">
+            <details>
+              <summary>Can I try a demo?</summary>
+              <div class="faq__content">
+                Yes — you can view a simulated demo on the “Demo” page.
+              </div>
+            </details>
+          </li>
+          <li class="faq__item">
+            <details>
+              <summary>Is customer data secure?</summary>
+              <div class="faq__content">
+                Absolutely. GenDesk follows strict security and data-handling best practices.
+              </div>
+            </details>
+          </li>
+        </ol>
+      </div>
     </section>
+
+    <!-- =================== Demo (How it works) =================== -->
+<section id="demo" class="demo" aria-labelledby="demo-title">
+  <div class="container">
+    <header class="section__header">
+      <h2 id="demo-title" class="section__title">How GenDesk Works</h2>
+      <p class="section__kicker">No video — just the real flow</p>
+    </header>
+
+    <ol class="how__steps" role="list">
+      <li class="how__step">
+        <h3 class="how__title">1) We set up your AI receptionist</h3>
+        <p class="how__text">We create your GenDesk agent, tune tone, hours, FAQs, and routing to match your business.</p>
+      </li>
+      <li class="how__step">
+        <h3 class="how__title">2) Connect calendars & numbers</h3>
+        <p class="how__text">Link Google/Outlook. You get phone number(s) from us, or we port existing ones.</p>
+      </li>
+      <li class="how__step">
+        <h3 class="how__title">3) Start answering & booking</h3>
+        <p class="how__text">The agent answers calls 24/7, books appointments, handles messages, and sends summaries.</p>
+      </li>
+      <li class="how__step">
+        <h3 class="how__title">4) Iterate for accuracy</h3>
+        <p class="how__text">We review transcripts, refine FAQs, and adjust routing so your client experience stays sharp.</p>
+      </li>
+    </ol>
+
+    <div class="demo__cta">
+      <a class="btn btn--primary" href="#pricing">See Pricing</a>
+      <a class="btn btn--ghost" href="#contact">Talk to us</a>
+    </div>
+  </div>
+</section>
 
     <!-- =================== Contact =================== -->
     <section id="contact" class="contact" aria-labelledby="contact-title">
@@ -295,7 +494,7 @@
             <label class="form__label" for="service">Service</label>
             <select class="form__select" id="service" name="service" required>
               <option value="">Select a service…</option>
-              <option>AI Call Assistant</option>
+              <option>AI Call Answering</option>
               <option>Auto-Scheduling</option>
               <option>Admin Automation</option>
               <option>Client Interaction</option>
@@ -309,7 +508,7 @@
             <textarea class="form__textarea" id="message" name="message" rows="5"></textarea>
           </div>
 
-          <!-- Honeypot (hidden via CSS later) -->
+          <!-- Honeypot (hide with CSS later) -->
           <div class="form__row form__honeypot" aria-hidden="true">
             <label for="website">Website</label>
             <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
@@ -328,24 +527,26 @@
   </main>
 
   <!-- =================== Footer =================== -->
-  <footer class="site-footer" role="contentinfo">
-    <div class="container footer__inner">
+ <footer class="site-footer" role="contentinfo">
+  <div class="container footer__inner">
+    <div class="footer__left">
       <p class="footer__brand">© <span data-year>2025</span> GenDesk</p>
-      <nav class="footer__nav" aria-label="Footer">
-        <ul class="footer__list">
-          <li><a href="#services">Services</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#demo">Demo</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="/privacy.html">Privacy</a></li>
-        </ul>
-      </nav>
+      <p class="footer__contact">
+        <a href="mailto:gendeskassistant@gmail.com">gendeskassistant@gmail.com</a> ·
+        <span>1151 Richmond St. Canada</span>
+      </p>
     </div>
-  </footer>
 
-  <!-- JS hook (not included yet) -->
-  <script src="scripts.js" defer></script>
-
-  <noscript>This site uses small, accessibility-friendly effects. Everything works without JavaScript.</noscript>
-</body>
-</html>
+    <nav class="footer__nav" aria-label="Footer">
+      <ul class="footer__list">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#demo">How it works</a></li>
+        <li><a href="/privacy.html">Privacy</a></li>
+        <li><a href="/terms.html">Terms</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
