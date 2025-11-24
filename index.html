@@ -218,22 +218,22 @@
         </div>
 
         <!-- Tabs (radio-based, accessible) -->
-        <fieldset class="billing" role="radiogroup" aria-label="Billing period">
-          <legend class="visually-hidden">Billing period</legend>
+      <!-- Radios must be siblings of .pricing__grid for CSS to work -->
+<input type="radio" name="bill" id="bill-monthly" class="billing__radio" checked>
+<input type="radio" name="bill" id="bill-quarter" class="billing__radio">
+<input type="radio" name="bill" id="bill-yearly"  class="billing__radio">
 
-          <input type="radio" name="bill" id="bill-monthly" class="billing__radio" checked>
-          <label for="bill-monthly" class="billing__btn">Monthly</label>
-
-          <input type="radio" name="bill" id="bill-quarter" class="billing__radio">
-          <label for="bill-quarter" class="billing__btn">
-            3-Month <span class="badge badge--save" aria-label="Save">Save vs monthly</span>
-          </label>
-
-          <input type="radio" name="bill" id="bill-yearly" class="billing__radio">
-          <label for="bill-yearly" class="billing__btn">
-            Yearly <span class="badge badge--save" aria-label="Save">Save vs monthly</span>
-          </label>
-        </fieldset>
+<!-- Visible tabs (labels point to the radios above) -->
+<fieldset class="billing" role="radiogroup" aria-label="Billing period">
+  <legend class="visually-hidden">Billing period</legend>
+  <label for="bill-monthly" class="billing__btn">Monthly</label>
+  <label for="bill-quarter" class="billing__btn">
+    3-Month <span class="badge badge--save" aria-label="Save">Save vs monthly</span>
+  </label>
+  <label for="bill-yearly"  class="billing__btn">
+    Yearly <span class="badge badge--save" aria-label="Save">Save vs monthly</span>
+  </label>
+</fieldset>
 
         <!-- Plans grid: show one CTA per plan; CSS will reveal the correct link per active tab -->
         <div class="pricing__grid" role="list">

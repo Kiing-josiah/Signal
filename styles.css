@@ -333,3 +333,58 @@ a:hover{opacity:.9}
   .about__grid{ grid-template-columns:1fr }
   .how__steps{ grid-template-columns:1fr }
 }
+
+.billing__radio{
+  position:absolute;
+  opacity:0;
+  pointer-events:none;
+}
+
+/* 2) Tab labels default + focus */
+.billing{
+  display:inline-flex;
+  gap:10px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:999px;
+  padding:6px;
+  margin:.6rem 0 1rem;
+}
+.billing label{
+  user-select:none;
+  cursor:pointer;
+  border-radius:999px;
+  padding:.55rem .9rem;
+  font-weight:800;
+  color:#dfe9f4;
+  transition:background var(--t-fast), color var(--t-fast), box-shadow var(--t-fast);
+}
+.billing label:focus-visible{
+  outline:2px solid var(--blue-2);
+  box-shadow:var(--shadow-focus);
+}
+
+/* 3) Highlight active tab (using :has) */
+.pricing:has(#bill-monthly:checked) .billing label[for="bill-monthly"],
+.pricing:has(#bill-quarter:checked) .billing label[for="bill-quarter"],
+.pricing:has(#bill-yearly:checked)  .billing label[for="bill-yearly"]{
+  background:var(--base-2);
+  color:#fff;
+  box-shadow:0 8px 22px rgba(0,0,0,.35);
+}
+
+/* 4) Show the correct price & CTA for the selected period */
+#bill-monthly:checked ~ .pricing__grid .price--monthly,
+#bill-quarter:checked ~ .pricing__grid .price--quarter,
+#bill-yearly:checked  ~ .pricing__grid .price--yearly{
+  display:inline-flex;
+}
+
+#bill-monthly:checked ~ .pricing__grid .cta--monthly,
+#bill-quarter:checked ~ .pricing__grid .cta--quarter,
+#bill-yearly:checked  ~ .pricing__grid .cta--yearly{
+  display:inline-flex;
+}
+
+/* 5) Accessibility polish */
+.price[aria-live]{ outline: none; }
